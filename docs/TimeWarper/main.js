@@ -46,7 +46,7 @@ function update() {
     }
   }
 
-  color("cyan")
+  color("cyan")``
   clockHand = bar(clockHand.pos, clockHand.length, clockHand.thickness, clockHand.rotation, clockHand.centerPosRatio);
   if (flip) {
     clockHand.rotation -= 0.01;
