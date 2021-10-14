@@ -32,6 +32,13 @@ options = {
  */
  let clockHand;
 
+ /**
+ * @type {{
+  * text: string
+  * }}
+  */
+  let textHolder;
+
  let flip;
  let progress;
 
@@ -46,8 +53,8 @@ function update() {
     }
   }
 
-  color("cyan")``
-  clockHand = bar(clockHand.pos, clockHand.length, clockHand.thickness, clockHand.rotation, clockHand.centerPosRatio);
+  color("cyan")
+  bar(clockHand.pos, clockHand.length, clockHand.thickness, clockHand.rotation, clockHand.centerPosRatio);
   if (flip) {
     clockHand.rotation -= 0.01;
     if (input.isJustPressed) 
@@ -93,17 +100,21 @@ function update() {
   text("11", 52, 39)
 
   let randomNum = rnd(0, 11)
+  let numStr = randomNum.toString();
 
-  if (progress == true) {
-    for (let i = 0; i <= arcs.length; i++) {
-      if (i == randomNum)
-        color("yellow") 
-        arcs[i] = arc(G.WIDTH/2,G.HEIGHT/2,50,2,(i-6)*(-1)*PI/6-PI/12,(i-7)*(-1)*PI/6-PI/12);
-        progress = false;
-    }
-  }
 
-  if ()
+
+  // if (progress == true) {
+  //   for (let i = 0; i <= arcs.length; i++) {
+  //     if (i == randomNum)
+  //       color("yellow") 
+  //       arc(G.WIDTH/2,G.HEIGHT/2,50,2,(i-6)*(-1)*PI/6-PI/12,(i-7)*(-1)*PI/6-PI/12);
+  //       if (bar(clockHand.pos, clockHand.length, clockHand.thickness, clockHand.rotation, clockHand.centerPosRatio).isColliding.arc(G.WIDTH/2,G.HEIGHT/2,50,2,(i-6)*(-1)*PI/6-PI/12,(i-7)*(-1)*PI/6-PI/12)
+
+  //       progress = false;
+  //   }
+  // }
+
 
   //color("yellow")
   //arc(G.WIDTH * 0.5, G.HEIGHT * 0.5, 50)
